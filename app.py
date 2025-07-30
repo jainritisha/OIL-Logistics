@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- MODERN UI STYLING ---
+# --- MODERN UI STYLING (CORRECTED) ---
 st.markdown("""
 <style>
     /* Main app background */
@@ -39,13 +39,14 @@ st.markdown("""
         font-weight: 600;
     }
     
-    /* Main titles */
-    h1, h2 {
-        color: #1a2a6c; /* A deep blue */
+    /* Main titles - Use !important to override default themes */
+    h1, h2, h3 {
+        color: #1a2a6c !important; 
     }
 
-    h3 {
-        color: #333333;
+    /* Ensure markdown text is also readable */
+    .stMarkdown p {
+        color: #333333 !important;
     }
 
     /* Expander styling */
@@ -54,7 +55,7 @@ st.markdown("""
     }
     [data-testid="stExpander"] > summary > div > p {
         font-weight: 600;
-        color: #1a2a6c;
+        color: #1a2a6c !important;
     }
 
 </style>
